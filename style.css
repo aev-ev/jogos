@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.5;
+    font-family: Helvetica;
+    font-weight: 400;
+    text-transform: none;
+    background-color: #FA8BFF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+    height: 100vh;
+}
+
+.main {
+    padding: 10px 15px 30px;
+    max-width: 900px;
+    margin: 10px auto 0 auto;
+}
+
+.section {
+    padding: 20px 1px;
+    margin: 0;
+    border-radius: 20px;
+    border-style: none;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 90vh;
+    z-index: 2;
+    background: rgba(128, 128, 128, 0.5);
+}
+
+.title-block {
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+    position: relative;
+}
+
+.title {
+    color: #404040;
+    margin: 0 10px 30px 10px;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 1.1em;
+    text-transform: uppercase;
+    font-family: Helvetica, sans-serif;
+    padding: 0;
+    border: 0;
+}
+
+.separator {
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-color: #202020;
+    width: 80%;
+    margin-bottom: 40px;
+    font-size: 0;
+    display: inline-block;
+}
+
+.separator2 {
+    background-image: linear-gradient( 109.6deg,  rgba(209,0,116,1) 11.2%, rgba(110,44,107,1) 91.1% );
+    width: 80%;
+    margin: 30px auto;
+    height: 2px;
+    display: block;
+}
+
+.btn-default:nth-child(1) {
+    margin-top: 50px;
+}
+
+.btn-default {
+    padding: 18px 80px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px auto;
+    text-transform: uppercase;
+    transform: .5s;
+    background-size: 200% auto;
+    display: block;
+    font-size: 100%;
+    cursor: pointer;
+}
+
+.mines {
+    background-image: linear-gradient(to right, #1A2980 0%, #26D0CE  51%, #1A2980  100%);
+    color: #fff;
+}
+
+.tiger {
+    background-image: linear-gradient(to right, #7b4397 0%, #dc2430 51%, #7b4397 100%);
+    color: #fff;
+}
+
+.roleta {
+    background-image: linear-gradient(to right, #ff8008 0%, #ffc837 51%, #ff8008 100%);
+    color: #fff;
+}

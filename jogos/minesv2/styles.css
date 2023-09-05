@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.8;
+    font-family: Helvetica;
+    font-weight: 400;
+    text-transform: none;
+    background: linear-gradient(-45deg, #000, #0800ff);
+}
+
+.main {
+    padding: 10px 15px 30px;
+    max-width: 900px;
+    margin: 10px auto 0 auto;
+}
+
+.section {
+    padding: 20px 1px;
+    margin: 0;
+    border-radius: 20px;
+    border-style: none;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    z-index: 2;
+    background: rgba(128, 128, 128, 0.5);
+}
+
+.title-block {
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+    position: relative;
+}
+
+.title {
+    color: #c6c6c6;
+    margin: 0 10px 30px 10px;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 1.1em;
+    text-transform: none;
+    font-family: Helvetica, sans-serif;
+    padding: 0;
+    border: 0;
+}
+
+.separator {
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-color: #c9c9c9;
+    width: 60%;
+    margin-bottom: 20px;
+    font-size: 0;
+    display: inline-block;
+}
+
+.description {
+    color: #ddd;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-family: Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5em;
+    margin: 0 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.game-wrapper {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.loading-board {
+    border-radius: 15px;
+}
+
+.loading-board::before {
+    content: "";
+    position: absolute;
+    border-radius: 10px;
+    top: -1%;
+    left: -1%;
+    width: 102%;
+    height: 102%;
+    z-index: -1;
+    background-image: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientborders 5s ease infinite;
+}
+
+.lb {
+    border-radius: 8px;
+    z-index: 1;
+    background-color: #000;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+    margin-bottom: 0;
+    z-index: 2;
+    background-color: #000;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.board div {
+    width: 63px;
+    height: 53px;
+}
+
+.board img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.overlay {
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.status-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.status {
+    display: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.generate-hint,
+.cadastro {
+    display: inline-block;
+    position: relative;
+    font-size: 1.2rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    padding: 25px 30px;
+    color: #fff;
+    transition: 0.5s;
+    text-decoration: none;
+    letter-spacing: 2px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.generate-hint {
+    margin: 30px 0;
+}
+
+.cadastro {
+    margin: 0;
+}
+
+.generate-hint:hover,
+.cadastro:hover {
+    background: #03e9f4;
+    color: #f1f1f1;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 50px #03e9f4;
+}
+
+.generate-hint span,
+.cadastro span {
+    position: absolute;
+    display: block;
+}
+
+.generate-hint span:nth-child(1),
+.cadastro span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: animate1 1s linear infinite;
+}
+
+.generate-hint span:nth-child(2),
+.cadastro span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+.generate-hint span:nth-child(3),
+.cadastro span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+
+.generate-hint span:nth-child(4),
+.cadastro span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes gradientborders {
+    0%{background-position: 0% 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0% 50%;}
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+@keyframes animate2 {
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+
+@keyframes animate3 {
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+
+@keyframes animate4 {
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}

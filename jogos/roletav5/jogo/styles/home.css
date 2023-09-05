@@ -1,0 +1,210 @@
+:root {
+    --ddb-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --ddb-font-family: var(--ddb-font-sans-serif);
+    --ddb-font-size: 1rem;
+    --ddb-font-weight: 400;
+    --ddb-line-height: 1.5;
+    --ddb-body-color: #212529;
+    --ddb-body-bg: #fff;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: smooth;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: var(--ddb-font-family);
+    font-size: var(--ddb-font-size);
+    font-weight: var(--ddb-font-weight);
+    line-height: var(--ddb-line-height);
+    color: var(--ddb-body-color);
+    text-align: unset;
+    background-color: var(--ddb-body-bg);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: calc(1.375rem + 1.5vw);
+}
+
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+img,
+svg {
+    vertical-align: middle;
+}
+
+button {
+    border-radius: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-transform: none;
+}
+
+button:focus:not(:focus-visible) {
+    outline: 0;
+}
+
+[type=button],
+[type=reset],
+[type=submit],
+button {
+    -webkit-appearance: button;
+    appearance: button;
+}
+
+
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+.game-wrapper-module[data-d-ddb65] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: url(../images/background.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.game-wrapper-module .game-title[data-d-ddb65] {
+    padding-top: 10.33333vw;
+    text-align: center;
+}
+
+.game-wrapper-module .game-title img[data-d-ddb65] {
+    width: 65vw;
+    height: 55vw;
+    border-radius: 50%;
+}
+
+.game-wrapper-module .game-prize-module[data-d-ddb65] {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 2;
+}
+
+.game-wrapper-module .game-prize-module .game-prize[data-d-ddb65] {
+    width: 75.73333vw;
+    height: 75.73333vw;
+    background: url(../images/moldura-roleta.png) no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2.4vw;
+}
+
+.game-wrapper-module .game-prize-module .game-prize img[data-d-ddb65] {
+    position: absolute;
+    z-index: -1;
+    width: 72vw;
+    height: 72vw;
+    transform: rotate(0);
+    transition: transform 5s ease-in-out 0s;
+}
+
+.game-wrapper-module .game-prize-module button[data-d-ddb65] {
+    display: block;
+    width: 80vw;
+    height: 18.66667vw;
+    outline: none;
+    border: 0;
+    background: url(../images/botao-spin.png) no-repeat;
+    background-size: 80vw 18.66667vw;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 5.33333vw;
+    color: #fff;
+    font-size: 9.33333vw;
+    text-align: center;
+    transform: scale(.7);
+    animation: fadeIn-ddb65 1s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+@keyframes fadeIn-ddb65 {
+    0% {
+        transform: scale(.7);
+    }
+
+    to {
+        transform: scale(.9);
+    }
+}
+
+.ddb-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+}
+
+.pop-module[data-d-ddb65] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90.66667vw;
+    height: 47.46667vw;
+    background: url(../images/fundo-popup.png) no-repeat;
+    background-size: 90.66667vw 47.46667vw;
+    text-align: center;
+    padding-top: 4vw;
+}
+
+.pop-module h1[data-d-ddb65] {
+    font-weight: 700;
+    font-family: Helvetica;
+    font-size: 9.06667vw;
+    color: #ff3;
+}
+
+.pop-module .content[data-d-ddb65] {
+    margin-top: 5.66667vw;
+    color: #fff;
+    font-weight: 500;
+    font-size: 4.26667vw;
+    text-transform: uppercase;
+    font-family: Helvetica;
+}
